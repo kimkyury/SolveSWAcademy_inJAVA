@@ -7,14 +7,12 @@ public class baek11399 {
         StringTokenizer st = new StringTokenizer(br.readLine(), "");
 
         int n = Integer.parseInt(st.nextToken());
-
         int[] time = new int[n];
 
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
             time[i] = Integer.parseInt(st.nextToken());
         }
-
         // time배열을 오름차순으로 정렬하자
         for (int i = 0; i < n - 1; i++) {
             boolean bigger = false;
@@ -25,7 +23,6 @@ public class baek11399 {
                     break;
                 }
             }
-
             // 오름차순 되지 않은 순서가 있었다면 재정렬하자
             for (int k = 0; k < n - 1; k++) {
                 if (bigger == true && time[k] > time[k + 1]) {
@@ -35,7 +32,6 @@ public class baek11399 {
                 }
             }
         }
-
         // answer배열을 만들어서 오름차순을 1, 2, 3, 4, 5번째까지 더하도록하고 리턴시키자
         int sum1, sum2 = 0;
         for (int j = 0; j < n; j++) {
