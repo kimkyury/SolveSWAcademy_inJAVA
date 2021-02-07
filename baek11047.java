@@ -12,7 +12,6 @@ public class baek11047 {
 
         // k개의 동전 단위를 입력받는다(오름차순으로 받는다)
         int[] unit = new int[n];
-
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
             unit[i] = Integer.parseInt(st.nextToken());
