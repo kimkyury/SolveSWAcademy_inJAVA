@@ -12,7 +12,6 @@ public class baek4963 {
     static int cnt;
 
     static void dfs() {
-
     }
 
     public static void main(String[] args) throws IOException {
