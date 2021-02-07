@@ -27,7 +27,6 @@ public class baek11047 {
         for (int i = n - 1; i >= 0; i--) {
             cnt += rest / unit[i];
             rest = rest % unit[i];
-            System.out.print(cnt);
         }
         System.out.print(cnt);
     }
