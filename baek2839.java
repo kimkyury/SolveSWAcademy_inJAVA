@@ -5,7 +5,6 @@ import java.util.*;
 public class baek2839 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
 
@@ -19,7 +18,6 @@ public class baek2839 {
 
         else if (n > 5 && (n - 6) % 5 == 0) {
             System.out.print((n - 6) / 5 + 2);
-
         }
 
         else if (n > 8 && (n - 9) % 5 == 0) {
