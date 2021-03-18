@@ -14,6 +14,7 @@ public class baek1012 {
 
         for (int i = 0; i < t; i++) {
             int warm = 0;
+
             // 밭의 크기와 배추의 갯수를 받아오자
             StringTokenizer st = new StringTokenizer(br.readLine());
             m = Integer.parseInt(st.nextToken());
@@ -21,6 +22,7 @@ public class baek1012 {
             k = Integer.parseInt(st.nextToken());
             map = new int[m][n];
             visit = new boolean[m][n];
+
             // 밭에 난 배추의 위치를 설정하자
             for (int j = 0; j < k; j++) {
                 st = new StringTokenizer(br.readLine());
@@ -28,9 +30,10 @@ public class baek1012 {
                 int mapY = Integer.parseInt(st.nextToken());
                 map[mapX][mapY] = 1;
             }
+
             // 군집의 개수를 셀 수 있도록 방문표시할 dfs를 실행시킬 반복문과 조건문을 작성하자
-            // 1. map의 각 성분들 마다 반복한다
-            // 2. 각 위치에 양배추가 있고, 방문하지 않은 좌표라면 dfs실행
+            // 1. map의 각 성분들 마다 반복
+            // 2. 각 위치에 양배추가 있고, 방문하지 않은 좌표라면 dfs를 실행
             for (int x = 0; x < m; x++) {
                 for (int y = 0; y < n; y++) {
                     if (map[x][y] == 1 && !visit[x][y]) {

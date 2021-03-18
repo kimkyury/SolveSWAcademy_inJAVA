@@ -39,9 +39,8 @@ public class baek1449 {
                     if (j == n - 1) {
                         cnt++;
                         System.out.print(cnt);
-                        return;
                     }
-                    break;
+                    return;
                 }
                 if (j == n - 1) {
                     cnt++;
