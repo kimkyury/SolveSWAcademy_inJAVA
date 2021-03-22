@@ -2,6 +2,9 @@ import java.util.*;
 import java.io.*;
 
 public class baek1018 {
+
+    public static int min = 64;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -22,17 +25,14 @@ public class baek1018 {
         // NxM사이즈의 체스판 생성
         char[][] map = new char[N][M];
 
-
-        //각 만들어질 체스판에서 색칠해야할 정사각 갯수를 담을 배열
-        int[] counts = new int[(N-8+1)*(M-8+1)];
-        for  (int i =0; i<(N-8+1)*(M-8+1); i++){
+        // 각 만들어질 체스판에서 색칠해야할 정사각 갯수를 담을 배열
+        int[] counts = new int[(N - 8 + 1) * (M - 8 + 1)];
+        for (int i = 0; i < (N - 8 + 1) * (M - 8 + 1); i++) {
             counts[i] = 0;
         }
 
-        char [] ex1 = {'W','B','W','B','W','B','W','B'};
-        char [] ex2 = {'B','W','B','W','B','W','B','w'};
-
-
+        char[] ex1 = { 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' };
+        char[] ex2 = { 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'w' };
 
         StringBuilder sb;
         // char map에 입력받자
@@ -43,20 +43,35 @@ public class baek1018 {
             }
         }
 
-
         for (int i = 0; i < N - 8; i++) {
-            for (int j = 0; j < 8; j++){
-                if
-                counts[i] ++;
-            }
-
+            for (int j = 0; j < 8; j++) {
+                counts[i]++;
             }
         }
+    }
 
-    static int equal (char [] ex1, char [][] map){
-            fo
+    static int equal(int x, int y) {
+        int end_x = x + 8;
+        int end_y = y +8;
+        int count =0;
 
+        boolean TF = arr[x][y]
 
+        for(int i=x; i<end_x; i++){
+            for(int j=y; j<end_y; j++){
+
+                if(arr[i][j] != TF){
+                    count++;
+                }
+                TF=(!TF);
+            }
+
+            TF = !TF;
         }
+
+        count = Math.min(count, 64 - count);
+
+        min = Math.min(min, count);
+    }
 
 }
