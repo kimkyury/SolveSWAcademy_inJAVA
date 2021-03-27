@@ -10,16 +10,16 @@ public class baek1018 {
 
     // 체스판의 완성본은 흰색으로 시작하거나 검은색으로 시작하거나 둘 중 하나이다.
     static final char[][] W_board = { { 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' },
-            { 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' }, { 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' },
-            { 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' }, { 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' },
-            { 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' }, { 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' },
-            { 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' } };
+            { 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' }, { 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' },
+            { 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' }, { 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' },
+            { 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' }, { 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' },
+            { 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' }, };
 
     static final char[][] B_board = { { 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' },
-            { 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' }, { 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' },
-            { 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' }, { 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' },
-            { 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' }, { 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' },
-            { 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' } };
+            { 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' }, { 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' },
+            { 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' }, { 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' },
+            { 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' }, { 'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W' },
+            { 'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B' }, };
 
     public static void main(String[] args) throws IOException {
 
@@ -37,6 +37,7 @@ public class baek1018 {
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
         board = new char[N][M];
+
         // 얘는 나중에 생성되는 각각의 체스판들의, 결과체스판과의 different카운트 수를 저장할 공간
         // 만들어질 체스판이 총 {N-7}*{M-7} 개가 될 거니까 개수도 이만큼
         cnt = new int[(N - 7) * (M - 7)];
@@ -51,11 +52,10 @@ public class baek1018 {
         // 입력받기 끝
 
         // 함수 count의 시작점을 보내자.
-        for (int k = 0; k < (N - 7) * (M - 7); k++) {
-            for (int i = 0; i < N - 7; i++) {
-                for (int j = 0; j < M - 7; j++) {
-                    cnt[k] = count(board, i, j);
-                }
+        int k = 0;
+        for (int i = 0; i < N - 7; i++) {
+            for (int j = 0; j < M - 7; j++) {
+                cnt[k++] = count(board, i, j);
             }
         }
 
@@ -86,7 +86,8 @@ public class baek1018 {
             for (int j = 0; j < 8; j++) {
                 if (cutBoard[i][j] != W_board[i][j]) {
                     W_cnt++;
-                } else if (cutBoard[i][j] != B_board[i][j]) {
+                }
+                if (cutBoard[i][j] != B_board[i][j]) {
                     B_cnt++;
                 }
             }
