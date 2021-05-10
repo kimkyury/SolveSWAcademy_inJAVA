@@ -8,18 +8,14 @@ public class baek11726 {
         int n = Integer.parseInt(br.readLine());
         
         dp = new int [n+1];
+        dp[0] = 1;
         dp[1] = 1;
-        dp[2] = 2;
-        System.out.print(cal(n));
-    }
 
-    static public int cal(int n){
-        if(dp[n] >0){
-            return dp[n];
+        if( 2<= n){
+            for(int i= 2; i<=n; i++){
+                dp[i] = (dp[i-1] + dp[i-2]) %10007;
+            }
         }
-        //2xn을 만들려면, 2x(n-1)에서 [ | ] 를 하나씩 추가하거나
-        //  2X(n-2)에서 [ = ] 를 하나씩 추가한다
-        dp[n] = (cal(n-1) + cal(n-2)) % 10007;
-        return dp[n];
+        System.out.print(dp[n]);
     }
 }
