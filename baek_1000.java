@@ -6,8 +6,10 @@ public class baek_1000 {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int a = Integer.parseInt(br.readLine());
-        int b = Integer.parseInt(br.readLine());
+        String str = br.readLine();
+        StringTokenizer st = new StringTokenizer(str, " ");
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
 
         int c = a + b;
 
