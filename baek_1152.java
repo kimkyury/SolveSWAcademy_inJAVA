@@ -1,16 +1,20 @@
 
-import java.util.Scanner;
 import java.util.StringTokenizer;
+import java.io.*;
 
 public class baek_1152 {
-	public static void main(String[] args) {
-		// int answer =0 ; // 개수 카운트
-		Scanner sc = new Scanner(System.in);
-		String words = sc.nextLine();
-		sc.close();
+	public static void main(String[] args) throws IOException {
 
-		StringTokenizer st = new StringTokenizer(words, " ");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-		System.out.println(st.countTokens());
+		int cnt = 0;
+		String str = "";
+		while (st.hasMoreTokens()) {
+			str = st.nextToken();
+			cnt++;
+		}
+
+		System.out.println(cnt);
 	}
 }
