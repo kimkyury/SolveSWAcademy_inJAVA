@@ -7,8 +7,8 @@ public class baek_1008 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        double a = Integer.parseInt(st.nextToken());
-        double b = Integer.parseInt(st.nextToken());
+        float a = Integer.parseInt(st.nextToken());
+        float b = Integer.parseInt(st.nextToken());
 
         System.out.print((a / b));
     }
