@@ -14,7 +14,7 @@ public class back_1157 {
         char answer = ' '; // 리턴 값
 
         // 문자열을 소문자로 바꾸자
-        str = str.toLowerCase();
+        str = str.toUpperCase();
 
         // 입력된 각 문자의 개수를 세어 보자, Mississipi라고 생각해보자
         int cnt;
