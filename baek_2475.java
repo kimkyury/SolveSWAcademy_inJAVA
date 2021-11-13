@@ -16,8 +16,6 @@ public class baek_2475 {
         }
 
         remainder = remainder % 10;
-
         System.out.print(remainder);
-
     }
 }
