@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.util.*;
 
@@ -13,19 +12,12 @@ public class baek_1157 {
         int[] arrCnt = new int[len]; // 각 단어의 개수
         char answer = ' '; // 리턴 값
 
-        // 문자열을 대문자로 바꾸자
+        // 문자열을 소문자로 바꾸자
         str = str.toUpperCase();
-
-        // 대문자로 바꾸는 것을 직접 써보자.
-        
-
 
         // 입력된 각 문자의 개수를 세어 보자, Mississipi라고 생각해보자
         int cnt;
         for (int i = 0; i < len; i++) {
-            if ( (int)str.charAt(i) > 94 ){
-                str.
-            }
 
             cnt = 0;
             if (isPassed[i] == true) {
