@@ -6,13 +6,13 @@ public class baek_2475 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String st = br.readLine();
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int len = st.length();
         int remainder = 0;
-
-        for (int i = 0; i < len; i++) {
-            remainder += Math.pow((int) st.charAt(i), 2);
+        String str;
+        while (st.hasMoreTokens()) {
+            str = st.nextToken();
+            remainder += Math.pow(Integer.parseInt(str), 2);
         }
 
         remainder = remainder % 10;
