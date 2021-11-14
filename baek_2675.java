@@ -8,7 +8,6 @@ public class baek_2675 {
         int n = Integer.parseInt(br.readLine());
 
         for (int i = 0; i < n; i++) {
-            String answer = "";
             StringTokenizer st = new StringTokenizer(br.readLine());
             int times = Integer.parseInt(st.nextToken());
             String word = st.nextToken();
