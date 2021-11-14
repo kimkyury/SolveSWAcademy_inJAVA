@@ -9,9 +9,8 @@ public class baek_1152 {
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
 		int cnt = 0;
-		String str = "";
 		while (st.hasMoreTokens()) {
-			str = st.nextToken();
+			st.nextToken();
 			cnt++;
 		}
 
