@@ -9,6 +9,5 @@ public class baek_11654 {
         int ascii = ch;
 
         System.out.print(ascii);
-
     }
 }
