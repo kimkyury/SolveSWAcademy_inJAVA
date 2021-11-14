@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class baek_2675 {
+public class baek_2677 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
