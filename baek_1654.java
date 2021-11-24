@@ -37,7 +37,7 @@ public class baek_1654 {
         // 힌트를 이용해서, 이분 탐색을 써보자
         binarySearch_LanMaxLen((long) 0, lan[k - 1] + 1);
 
-        System.out.print(mid - 1);
+        System.out.print(mid - 1); // 상한값을 +1을 해줬었으니 여기서 제거해주자.
     }
 
     static void binarySearch_LanMaxLen(Long min, Long max) { // 바이너리서치로 최대 랜선 길이 찾기
@@ -53,7 +53,8 @@ public class baek_1654 {
             if (cnt < n) { // 토막수가 적으니, 길이를 줄여야 한다 => 최대값이 감소된다
                 binarySearch_LanMaxLen(min, mid);
             } else { // 토막수가 많으니, 길이를 증가시켜야 한다=> 최저값이 증가된다
-                binarySearch_LanMaxLen(mid + 1, max); // (중앙값, 최대값)
+                binarySearch_LanMaxLen(mid + 1, max); // 하한값은 +1을 해줘야 min<max 조건문을 제대로 수행하게 하겠지
+                                                      // ex) min =2, max=3 이었다면=> mid=2가 되니까 계속 반복됨.
             }
         }
     }
