@@ -12,17 +12,29 @@ public class baek_1874 {
         int[] popArr = new int[n];
         char[] popCA = new char[n];
 
-        for (int i = 0; i < n; i++) {
-            arr[i] = Integer.parseInt(br.readLine());
-            sortArr[i] = i + 1;
+        for (int i = 0; i < n; i++) { 
+            arr[i] = Integer.parseInt(br.readLine()); // 입력된 수열
+            sortArr[i] = i + 1; // 정렬된 수열 (1~n까지 가질 것임)
         }
 
         int indexCA = 0;
         int indexSA = 0;
-        int indexPA = 0;
+        int indexArr = 0;
+        while( indexCA < n){
+            createArr[indexCA] = sortArr[indexSA];
+
+            if( createArr[indexCA] == arr [indexArr]){
+                createAr
+
+            }
+        }
+
+
+
 
         while (indexCA < n) { // CreateArr가 다 채워지는 게 종료 조건.
             createArr[indexCA] = sortArr[indexSA];
+            
             if (createArr[indexCA] == arr[indexCA]) {
                 popArr[indexPA] = createArr[indexCA];
 
