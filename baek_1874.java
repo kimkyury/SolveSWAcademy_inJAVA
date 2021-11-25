@@ -8,43 +8,38 @@ public class baek_1874 {
 
         int[] arr = new int[n];
         int[] sortArr = new int[n];
-        int[] createArr = new int[n];
-        int[] popArr = new int[n];
-        char[] popCA = new char[n];
+        ArrayList<Character> pop = new ArrayList<Character>();
 
-        for (int i = 0; i < n; i++) { 
+        for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(br.readLine()); // 입력된 수열
-            sortArr[i] = i + 1; // 정렬된 수열 (1~n까지 가질 것임)
         }
 
-        int indexCA = 0;
-        int indexSA = 0;
         int indexArr = 0;
-        while( indexCA < n){
-            createArr[indexCA] = sortArr[indexSA];
+        int indexSA = 1;
 
-            if( createArr[indexCA] == arr [indexArr]){
-                createAr
+        int i = 1;
+        Loop1: while (i <= n) {
+            sortArr[indexSA - 1] = i;
 
+            while (sortArr[indexSA - 1] == arr[indexArr]) {
+                indexSA--;
+                pop.add('-');
+                indexArr++;
+                if (indexSA == 0 && i == n) {
+                    break Loop1;
+                } else if (indexSA == 0) {
+                    break;
+                }
             }
+            pop.add('+');
+            i++;
+            indexSA++;
         }
 
+        for (int j = 0; j < pop.size(); j++) {
+            System.out.print(pop.get(j));
 
-
-
-        while (indexCA < n) { // CreateArr가 다 채워지는 게 종료 조건.
-            createArr[indexCA] = sortArr[indexSA];
-            
-            if (createArr[indexCA] == arr[indexCA]) {
-                popArr[indexPA] = createArr[indexCA];
-
-            } else {
-
-            }
-
-            indexCA++;
         }
-
         // 스택 자료구조
         // push pop
         // 제일 나중에 들어간 자료가 제일 먼저 나오도록.
