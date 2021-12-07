@@ -10,12 +10,12 @@ public class baek_1546 {
 
         double[] score = new double[n];
         for (int i = 0; i < n; i++)
-            score[i] = Double.parseDouble(st.nextToken());
+            score[i] = Double.parseDouble(st.nextToken()); 
 
         double max = score[0];
         for (int i = 1; i < n; i++)
             if (max < score[i])
-                max = score[i];
+                max = score[i]; 
 
         double avg = 0;
         for (int i = 0; i < n; i++)
